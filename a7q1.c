@@ -10,7 +10,7 @@ int p[3][2],ch,i;
 	{
   	scanf("%d",&p[i][0]);
 	}
-printf("Enter your choice\n");
+printf("enter your choice\n");
 printf("1.FCFS\n2.SJF\n3.Exit\n");
 scanf("%d",&ch);
 switch(ch)
