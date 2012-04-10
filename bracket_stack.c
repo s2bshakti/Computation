@@ -8,45 +8,41 @@ main()
 	FILE *fp;
 	stack[0]='\0';
 	char ch;
-	fp=fopen("qw.c","r");
+	fp=fopen("gh.c","r");
 	while(fscanf(fp,"%c",&ch)!=EOF)
 	{
 		if(ch=='('||ch=='{'||ch=='[')
 		{
-			top++;
-			stack[top]=ch;
+			push(ch);
 		}
 		if(ch==')'||ch=='}'||ch==']')
 		{
-			if(top==0)
-			{
-		
-				printf("Incorrect Input sequence of Brackets");
-						
-			}
-			if(ch==')'&&stack[top]=='('||ch=='}'&&stack[top]=='{'||ch==']'&&stack[top]=='[')
-			{
-				top--;
-				//return 0;
-			}
-			if(stack[top]=='\0')
-			{
-				printf("Correct Input\n");
-			}
-			else
-			{
-				printf("last");
-				printf("Incorrect Input sequence of Brackets\n");
-			}
+			pop(ch);
 		}
 	}
 }
-/*void push(char ch)
+void push(char ch)
 {
-	
+	top++;
+	stack[top]=ch;
 }
 
 void pop(char ch)
 {
-	
-}*/
+	if(top==0)
+	{
+		printf("Incorrect sequence of Brackets");			
+	}
+	if(ch==stack[top])
+	{
+		top--;
+	}
+	if(stack[top]=='\0')
+	{
+		printf("correct input sequence");
+	}					
+	else
+	{
+		printf("Incorrect Input sequence of Brackets\n");
+	}				
+}
