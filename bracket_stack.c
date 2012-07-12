@@ -2,11 +2,10 @@
 void push(char);
 void pop(char);
 char stack[200];
-int top=0;
+int top=-1;
 main()
 {
 	FILE *fp;
-	stack[0]='\0';
 	char ch;
 	fp=fopen("gh.c","r");
 	while(fscanf(fp,"%c",&ch)!=EOF)
@@ -29,20 +28,16 @@ void push(char ch)
 
 void pop(char ch)
 {
-	if(top==0)
-	{
-		printf("Incorrect sequence of Brackets");			
-	}
-	if(ch==stack[top])
+	if(ch==')'&&stack[top]=='('||ch=='}'&&stack[top]=='{'||ch==']'&&stack[top]=='[')
 	{
 		top--;
 	}
-	if(stack[top]=='\0')
+	if(top==-1)
 	{
-		printf("correct input sequence");
+		printf("correct Input sequence of Brackets\n");
 	}					
 	else
 	{
-		printf("Incorrect Input sequence of Brackets\n");
+		printf("incorrect input sequence");	
 	}				
 }
