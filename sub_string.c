@@ -5,7 +5,6 @@
 
 int is_substring_present(char* main, char* sub){
 	int count=0;
-	char sub_sim='1',main_sim='2';
 	int len_sub=strlen(sub);
 	while(*sub!='\0')
 	{
@@ -46,11 +45,11 @@ void assert_false(int value) {
 
 
 int main() {
-	int a,len_sub,len_main;
-	
 	assert_true(is_substring_present("abcdefg", "bcd"));
 	assert_true(is_substring_present("aabbccdd", "bc"));
 	assert_true(is_substring_present("aaabbbbccccdddd", "cd"));
 	assert_false(is_substring_present("aaabbbbccccdddd", "bcd"));
+	
+	return 0;
 }
 
