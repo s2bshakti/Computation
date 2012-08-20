@@ -1,7 +1,7 @@
 #include<stdio.h>
 #include<string.h>
 int no_operation(char*);
-main()
+int main()
 {
 	int test,len_input,output[100],i,num;
 	char input[1000];
@@ -23,6 +23,7 @@ main()
 		else
 		printf("YES\n");	
 	}
+	return 0;
 }
 int no_operation(char input[])
 {
