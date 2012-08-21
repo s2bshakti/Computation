@@ -1,7 +1,7 @@
 #include<stdio.h>
 #include<string.h>
 int no_operation(char*);
-main()
+int main()
 {
 	int test,len_input,output[100],i,num;
 	char input[1000];
@@ -11,7 +11,7 @@ main()
 	scanf("%s",input);
 	len_input=strlen(input);
 	num=no_operation(input);
-	if(num>(len_input*11))
+	if((len_input*11)>=num)
 		output[i]=0;
 	else
 		output[i]=1;
@@ -19,10 +19,11 @@ main()
 	for(i=0;i<test;i++)
 	{
 		if(output[i]==0)
-		printf("NO\n");
+		printf("YES\n");
 		else
-		printf("YES\n");	
+		printf("NO\n");	
 	}
+	return 0;
 }
 int no_operation(char input[])
 {
@@ -37,15 +38,11 @@ int no_operation(char input[])
 			no_op +=inc;
 			no_op++;
 		}		
-		else if(temp1>temp0)
+		else
 		{
 			inc=(temp1-temp0);
 			no_op+=inc;
 			no_op++;
-		}
-		else
-		{
-			no_op++;		
 		}
 		i++;	
 	}
