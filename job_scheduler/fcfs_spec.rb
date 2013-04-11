@@ -10,7 +10,7 @@ describe FCFS do
       FCFS.average_wait_time(process_timings_1).should == (5 + 7)/ 3.0
       FCFS.average_wait_time(process_timings_2).should == (2 + 3)/ 3.0
       FCFS.average_wait_time(process_timings_3).should == 0.0
-      FCFS.average_wait_time(process_timings_4).should == (1 + 4) / 3.0
+      FCFS.average_wait_time(process_timings_4).should == (1 + 3) / 3.0
     end
   end
 end
