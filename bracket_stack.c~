@@ -1,7 +1,7 @@
 #include<stdio.h>
 void push(char);
 void pop(char);
-char stack[400];
+char stack[200];
 int top=-1;
 main()
 {
