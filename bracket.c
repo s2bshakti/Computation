@@ -2,6 +2,7 @@
 #include<string.h>
 main()
 {
+//checking
 	FILE *fp;
 	char ch;
 	int a=0,a1=0,b=0,b1=0,c=0,c1=0;
